@@ -49,7 +49,6 @@ str(head(data, 2))
 ```{r}
 # Convert the 'date' column to Date type
 data$date <- as.Date(data$date, format = "%d/%m/%Y")  # Adjust the format if necessary
-
 # Create a new column for the year
 data$year <- year(data$date)
 
@@ -66,6 +65,7 @@ summary_table <- data %>%
 kable(
   summary_table,
   caption = "Summary of Mean New Cases and Total New Deaths by Year"
+
 )
 
 ```
@@ -83,7 +83,7 @@ ggplot(data, aes(x = date, y = new_cases)) +
   )
 
 ggplot(data, aes(x = date, y = new_deaths)) +
-  geom_point(color = "blue", alpha = 0.6) +
+  geom_point(color = "green", alpha = 0.6) +
   labs(
     title = "Scatter Plot of New COVID-19 Cases Over Time",
     x = "Date",
